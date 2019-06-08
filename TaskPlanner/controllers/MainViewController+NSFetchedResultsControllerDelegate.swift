@@ -30,6 +30,10 @@ extension MainViewController: NSFetchedResultsControllerDelegate {
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }
+        
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange sectionInfo: NSFetchedResultsSectionInfo,
@@ -42,10 +46,6 @@ extension MainViewController: NSFetchedResultsControllerDelegate {
         case .update, .move:
             fatalError("Invalid change type in controller(_:didChange:atSectionIndex:for:). Only .insert or .delete should be possible.")
         }
-    }
-
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.endUpdates()
     }
     
 }

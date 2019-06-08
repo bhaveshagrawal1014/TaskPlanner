@@ -36,18 +36,6 @@ class LocalNotificationHelper {
             
         }
         
-        func requestAuthorization() {
-            center.requestAuthorization(options: [.alert]) { (granted, error) in
-                
-                guard granted == true else {
-                    handler(nil)
-                    return
-                }
-                
-                buildNotification()
-            }
-        }
-        
         func buildNotification() {
             
             let content = UNMutableNotificationContent()
@@ -78,6 +66,17 @@ class LocalNotificationHelper {
             }
         }
         
+        func requestAuthorization() {
+            center.requestAuthorization(options: [.alert]) { (granted, error) in
+                
+                guard granted == true else {
+                    handler(nil)
+                    return
+                }
+                
+                buildNotification()
+            }
+        }
     }
     
 }

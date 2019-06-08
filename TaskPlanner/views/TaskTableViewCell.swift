@@ -33,10 +33,6 @@ class TaskTableViewCell: UITableViewCell {
     
     weak var delegate: TaskCellCheckDelegate?
     
-    func update() {
-        checkButton.isSelected = task.isDone
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -54,20 +50,24 @@ class TaskTableViewCell: UITableViewCell {
         isOpaque = false
     }
     
+    func update() {
+        checkButton.isSelected = task.isDone
+    }
+    
     @IBAction func checkTap(_ sender: Any) {
         delegate?.checkToggle(cell: self)
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        if selected {
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
             background.tintColor = #colorLiteral(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         } else {
             background.tintColor = UIColor.white
         }
     }
-
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        if highlighted {
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        if selected {
             background.tintColor = #colorLiteral(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         } else {
             background.tintColor = UIColor.white

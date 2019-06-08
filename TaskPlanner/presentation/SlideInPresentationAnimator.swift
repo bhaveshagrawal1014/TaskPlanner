@@ -22,18 +22,13 @@ final class SlideInPresentationAnimator: NSObject {
 
 extension SlideInPresentationAnimator: UIViewControllerAnimatedTransitioning {
     
-    func transitionDuration(
-        using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
-    }
-    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
         /*
          If this is a presentation,
-            the method asks the transitionContext for the view controller associated with the .to key, aka the view controller you’re moving to.
-            If dismissal, it asks the transitionContext for the view controller associated with the .from, aka the view controller you’re moving from.
- */
+         the method asks the transitionContext for the view controller associated with the .to key, aka the view controller you’re moving to.
+         If dismissal, it asks the transitionContext for the view controller associated with the .from, aka the view controller you’re moving from.
+         */
         let key = isPresentation ? UITransitionContextViewControllerKey.to
             : UITransitionContextViewControllerKey.from
         
@@ -45,8 +40,8 @@ extension SlideInPresentationAnimator: UIViewControllerAnimatedTransitioning {
         }
         
         /*
-        Calculate the frames you’re animating from and to.
-        Asks the transitionContext for the view’s frame when it’s presented.*/
+         Calculate the frames you’re animating from and to.
+         Asks the transitionContext for the view’s frame when it’s presented.*/
         let presentedFrame = transitionContext.finalFrame(for: controller)
         // Calculating the view’s frame when it’s dismissed. This section sets the frame’s origin so it’s just outside the visible area.
         var dismissedFrame = presentedFrame
@@ -66,6 +61,11 @@ extension SlideInPresentationAnimator: UIViewControllerAnimatedTransitioning {
             transitionContext.completeTransition(finished)
         }
         
+    }
+    
+    func transitionDuration(
+        using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.5
     }
     
 }

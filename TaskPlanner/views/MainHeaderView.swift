@@ -19,7 +19,9 @@ class MainHeaderView: UIView {
         super.init(coder: aDecoder)
         setupView()
     }
-    
+}
+
+private extension MainHeaderView {    
     private func setupView() {
         layer.shadowColor = #colorLiteral(red: 0.1450980392, green: 0.1490196078, blue: 0.368627451, alpha: 1).cgColor
         layer.shadowOpacity = 0.15

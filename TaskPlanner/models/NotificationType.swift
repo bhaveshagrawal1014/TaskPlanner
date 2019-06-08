@@ -70,31 +70,6 @@ enum NotificationType: Int {
         }
     }
     
-    func toString() -> String {
-        switch self {
-        case .none:
-            return "Not"
-        case .on_time:
-            return "At the time of the event"
-        case .time_5_min_before:
-            return "Before 5 min"
-        case .time_15_min_before:
-            return "Before 15 min"
-        case .time_30_min_before:
-            return "Before 30 min"
-        case .time_1_hour_before:
-            return "Before 1 hour"
-        case .time_2_hour_before:
-            return "Before 2 hour"
-        case .time_1_day_before:
-            return "Before 1 day"
-        case .time_2_day_before:
-            return "Before 2 day"
-        case .time_1_week_before:
-            return "Before 1 week"
-        }
-    }
-    
     func toTitleString() -> String {
         switch self {
         case .none:
@@ -117,6 +92,31 @@ enum NotificationType: Int {
             return "After 2 day"
         case .time_1_week_before:
             return "After 1 week"
+        }
+    }
+    
+    func toString() -> String {
+        switch self {
+        case .none:
+            return "Not Selected"
+        case .on_time:
+            return "At the time of the event"
+        case .time_5_min_before:
+            return "Before 5 min"
+        case .time_15_min_before:
+            return "Before 15 min"
+        case .time_30_min_before:
+            return "Before 30 min"
+        case .time_1_hour_before:
+            return "Before 1 hour"
+        case .time_2_hour_before:
+            return "Before 2 hour"
+        case .time_1_day_before:
+            return "Before 1 day"
+        case .time_2_day_before:
+            return "Before 2 day"
+        case .time_1_week_before:
+            return "Before 1 week"
         }
     }
 }

@@ -16,18 +16,18 @@ enum ServiceResult<Value> {
 
 class GeocodingService {
     
-    private enum Constants {
-        static let apiKey = "AIzaSyDHVXjp6Y3BE-vV431UKoRjEuEQlT_TMoU"
-        static let baseURL = "https://maps.googleapis.com/maps/api"
-        static let error = NSError(domain: "GeocodingService", code: 0, userInfo: nil)
-    }
-    
     private enum Methods {
         static let geocode = "/geocode"
     }
     
     private enum Formats {
         static let json = "/json"
+    }
+    
+    private enum Constants {
+        static let apiKey = "AIzaSyDHVXjp6Y3BE-vV431UKoRjEuEQlT_TMoU"
+        static let baseURL = "https://maps.googleapis.com/maps/api"
+        static let error = NSError(domain: "GeocodingService", code: 0, userInfo: nil)
     }
     
     private var request: DataRequest?

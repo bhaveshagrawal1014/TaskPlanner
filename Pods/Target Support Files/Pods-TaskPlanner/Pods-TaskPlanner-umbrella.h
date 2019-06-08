@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_plannerVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_plannerVersionString[];
+FOUNDATION_EXPORT double Pods_TaskPlannerVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_TaskPlannerVersionString[];
 

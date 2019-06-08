@@ -9,6 +9,6 @@
 import Foundation
 
 enum TaskFilterType {
-    case unchecked
     case checked
+    case unchecked
 }

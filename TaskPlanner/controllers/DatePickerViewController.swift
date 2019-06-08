@@ -15,21 +15,9 @@ class DatePickerViewController: HalfScreenViewController {
     
     var selectedDate: Date?
     
-    @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
-        handlePanGesture(sender)
-    }
-    
-    @IBAction func chooseTap(_ sender: Any) {
-        selectedDate = datePicker.date
-    }
-    
-    @IBAction func cancelTap(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if selectedDate != nil {
             datePicker.date = selectedDate!
         }
@@ -38,5 +26,17 @@ class DatePickerViewController: HalfScreenViewController {
         
         contentView.layer.cornerRadius = 10
     }
-
+    
+    @IBAction func cancelTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func chooseTap(_ sender: Any) {
+        selectedDate = datePicker.date
+    }
+    
+    @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
+        handlePanGesture(sender)
+    }
+    
 }

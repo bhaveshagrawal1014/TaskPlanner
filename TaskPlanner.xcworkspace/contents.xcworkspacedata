@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/bagrawal/Downloads/planner-master/TaskPlanner.xcodeproj">
+      location = "group:TaskPlanner.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

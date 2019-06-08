@@ -34,6 +34,24 @@ class MainViewController: UIViewController {
         fetchData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? TaskViewController, let indexPath = tableView.indexPathForSelectedRow {
+            vc.mode = .edit
+            
+            guard let task = fetchController?.object(at: indexPath) as Task? else {
+                return
+            }
+            
+            vc.taskToEdit = task
+        }
+    }
+    
     private func fetchData() {
         let request: NSFetchRequest<Task> = Task.fetchRequest()
         uncompletedPredicate = NSPredicate(format: "isDone == %@", NSNumber(booleanLiteral: false))
@@ -54,24 +72,6 @@ class MainViewController: UIViewController {
             try fetchController?.performFetch()
         } catch {
             fatalError("Failed to fetch entities: \(error)")
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if let indexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? TaskViewController, let indexPath = tableView.indexPathForSelectedRow {
-            vc.mode = .edit
-            
-            guard let task = fetchController?.object(at: indexPath) as Task? else {
-                return
-            }
-            
-            vc.taskToEdit = task
         }
     }
     

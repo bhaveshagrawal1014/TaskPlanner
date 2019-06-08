@@ -9,9 +9,7 @@
 import Foundation
 
 class ShortDateFormat {
-    
     static var formatter: DateFormatter?
-    
     static func formatDate(_ date: Date) -> String {
         if formatter == nil {
             formatter = DateFormatter()

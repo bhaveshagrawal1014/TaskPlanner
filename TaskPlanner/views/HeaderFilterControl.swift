@@ -34,15 +34,14 @@ class HeaderFilterControl: UIControl {
         moveButtonHighlighter(to: uncheckedButton)
     }
     
-    private func moveButtonHighlighter(to filterButton: UIButton) {
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            self.buttonHighlighter.frame.origin.x = filterButton.frame.origin.x
-        }, completion: nil)
-    }
-    
     @IBAction func checkedButtonTap(_ sender: Any) {
         filterSelected = .checked
         moveButtonHighlighter(to: checkedButton)
     }
     
+    private func moveButtonHighlighter(to filterButton: UIButton) {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.buttonHighlighter.frame.origin.x = filterButton.frame.origin.x
+        }, completion: nil)
+    }
 }

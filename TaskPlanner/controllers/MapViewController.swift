@@ -24,13 +24,31 @@ class MapViewController: UIViewController {
     
     let newyorkLocation = CLLocationCoordinate2D(latitude: 40.730610, longitude: -73.935242)
     
-    lazy var locationManager = CLLocationManager()
     lazy var service = GeocodingService()
+    lazy var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         chooseButton.isEnabled = false
         mapView.userLocation.title = "I'm here"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let centerCoordinate = newyorkLocation
+        let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+        let region = MKCoordinateRegion(center: centerCoordinate, span: span)
+        mapView.setRegion(region, animated: true)
+        
+        if let address = currentAddress {
+            
+            selectedPoint = MKPointAnnotation()
+            mapView.addAnnotation(selectedPoint!)
+            selectedPoint!.coordinate = CLLocationCoordinate2D(latitude: address.lat, longitude: address.lon)
+            addressLabel.text = address.formattedAddress
+            
+            chooseButton.isEnabled = address.formattedAddress != nil
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,24 +83,6 @@ class MapViewController: UIViewController {
         }
         if UIApplication.shared.canOpenURL(settingsUrl) {
             UIApplication.shared.open(settingsUrl, completionHandler: nil)
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        let centerCoordinate = newyorkLocation
-        let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
-        let region = MKCoordinateRegion(center: centerCoordinate, span: span)
-        mapView.setRegion(region, animated: true)
-        
-        if let address = currentAddress {
-            
-            selectedPoint = MKPointAnnotation()
-            mapView.addAnnotation(selectedPoint!)
-            selectedPoint!.coordinate = CLLocationCoordinate2D(latitude: address.lat, longitude: address.lon)
-            addressLabel.text = address.formattedAddress
-            
-            chooseButton.isEnabled = address.formattedAddress != nil
         }
     }
     
@@ -165,13 +165,4 @@ extension MapViewController: CLLocationManagerDelegate {
         
         requestAddress(for: location)
     }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-
-    }
-    
 }

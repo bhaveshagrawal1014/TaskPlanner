@@ -16,20 +16,6 @@ class NotificationPickerViewController: HalfScreenViewController {
     
     var selectedNotificationRepeatType: NotificationType?
     
-    @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
-        handlePanGesture(sender)
-    }
-    
-    @IBAction func chooseTap(_ sender: Any) {
-        let selectedIndex = pickerView.selectedRow(inComponent: 0)
-        let enumValue = NotificationType.allValues[selectedIndex]
-        selectedNotificationRepeatType = enumValue
-    }
-    
-    @IBAction func cancelTap(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,19 +30,20 @@ class NotificationPickerViewController: HalfScreenViewController {
         
         contentView.layer.cornerRadius = 10
     }
-
-}
-
-extension NotificationPickerViewController: UIPickerViewDataSource  {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+    @IBAction func cancelTap(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return NotificationType.allValues.count
+    @IBAction func chooseTap(_ sender: Any) {
+        let selectedIndex = pickerView.selectedRow(inComponent: 0)
+        let enumValue = NotificationType.allValues[selectedIndex]
+        selectedNotificationRepeatType = enumValue
     }
     
+    @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
+        handlePanGesture(sender)
+    }
 }
 
 extension NotificationPickerViewController: UIPickerViewDelegate  {
@@ -66,3 +53,15 @@ extension NotificationPickerViewController: UIPickerViewDelegate  {
     }
     
 }
+
+extension NotificationPickerViewController: UIPickerViewDataSource  {
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return NotificationType.allValues.count
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+}
+

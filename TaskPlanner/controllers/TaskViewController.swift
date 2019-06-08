@@ -54,6 +54,10 @@ class TaskViewController: UIViewController {
         showTaskData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        adjustTextViewHeight()
+    }
+    
     func showTaskData() {
         backButton.isHidden = mode == .create
         cancelButton.isHidden = mode != .create
@@ -155,10 +159,6 @@ class TaskViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        adjustTextViewHeight()
-    }
-    
     @IBAction func checkTap(_ sender: Any) {
         checkButton.isSelected = !checkButton.isSelected
     }
@@ -192,20 +192,20 @@ class TaskViewController: UIViewController {
         }
     }
     
-    @IBAction func backFromNotificationPicker(segue: UIStoryboardSegue) {
-        if let vc = segue.source as? NotificationPickerViewController {
-            if let type = vc.selectedNotificationRepeatType {
-                currentNotificationType = type
-                notificationLabel.text = currentNotificationType?.toString()
-            }
-        }
-    }
-    
     @IBAction func backFromDatePicker(segue: UIStoryboardSegue) {
         if let vc = segue.source as? DatePickerViewController {
             if let dt = vc.selectedDate {
                 currentDate = dt
                 dateLabel.text = ShortDateFormat.formatDate(dt)
+            }
+        }
+    }
+    
+    @IBAction func backFromNotificationPicker(segue: UIStoryboardSegue) {
+        if let vc = segue.source as? NotificationPickerViewController {
+            if let type = vc.selectedNotificationRepeatType {
+                currentNotificationType = type
+                notificationLabel.text = currentNotificationType?.toString()
             }
         }
     }

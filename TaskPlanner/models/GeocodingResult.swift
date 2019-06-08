@@ -10,12 +10,12 @@ import Foundation
 
 struct GeocodingResult: Decodable {
     
-    let results: [GeocodingResultItem]
     let status: String
+    let results: [GeocodingResultItem]
     
     enum CodingKeys: String, CodingKey {
-        case results
         case status
+        case results
     }
 }
 
