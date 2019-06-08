@@ -13,7 +13,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="TaskPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="152" width="375" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="task_cell" rowHeight="167" id="cWM-0p-je3" customClass="TaskTableViewCell" customModule="planner" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="task_cell" rowHeight="167" id="cWM-0p-je3" customClass="TaskTableViewCell" customModule="TaskPlanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="167"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWM-0p-je3" id="AOU-ve-IRE">
@@ -134,7 +134,7 @@ Click “+” to add a new task.</string>
                                 <color key="textColor" red="0.66274509800000003" green="0.6705882353" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqP-ye-esx" userLabel="MainHeaderView" customClass="MainHeaderView" customModule="planner" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqP-ye-esx" userLabel="MainHeaderView" customClass="MainHeaderView" customModule="TaskPlanner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wh8-Fv-KFm">
@@ -159,7 +159,7 @@ Click “+” to add a new task.</string>
                                             <constraint firstItem="ghy-7Q-RCT" firstAttribute="centerX" secondItem="wh8-Fv-KFm" secondAttribute="centerX" id="XvN-LL-o12"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJl-vR-UhQ" customClass="HeaderFilterControl" customModule="planner" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJl-vR-UhQ" customClass="HeaderFilterControl" customModule="TaskPlanner" customModuleProvider="target">
                                         <rect key="frame" x="32" y="113" width="311" height="25"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqz-zo-5rm">
@@ -281,7 +281,7 @@ Click “+” to add a new task.</string>
         <!--Task View Controller-->
         <scene sceneID="2gd-ng-YDJ">
             <objects>
-                <viewController id="ZnZ-82-QtU" customClass="TaskViewController" customModule="planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZnZ-82-QtU" customClass="TaskViewController" customModule="TaskPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ab-s2-8o9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -543,9 +543,9 @@ Click “+” to add a new task.</string>
         <!--Date Picker View Controller-->
         <scene sceneID="pyS-s0-woH">
             <objects>
-                <viewController id="NBq-Mw-VAL" customClass="DatePickerViewController" customModule="planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NBq-Mw-VAL" customClass="DatePickerViewController" customModule="TaskPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kfk-eM-esR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIV-Ci-H8f">
@@ -628,7 +628,7 @@ Click “+” to add a new task.</string>
         <!--Map View Controller-->
         <scene sceneID="IQE-aC-pio">
             <objects>
-                <viewController id="r2t-S8-fME" customClass="MapViewController" customModule="planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="r2t-S8-fME" customClass="MapViewController" customModule="TaskPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RUg-5o-wi6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -774,9 +774,9 @@ Click “+” to add a new task.</string>
         <!--Notification Picker View Controller-->
         <scene sceneID="DS0-Fb-SAV">
             <objects>
-                <viewController id="HUA-27-dnx" customClass="NotificationPickerViewController" customModule="planner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HUA-27-dnx" customClass="NotificationPickerViewController" customModule="TaskPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVI-53-76J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRB-Tq-JBa" userLabel="Content View">

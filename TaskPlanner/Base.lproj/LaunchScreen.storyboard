@@ -28,7 +28,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLx-MU-dDF" userLabel="MainHeaderView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qrv-hv-IVB">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qrv-hv-IVB">
                                         <rect key="frame" x="103.5" y="60" width="37" height="37"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pill" translatesAutoresizingMaskIntoConstraints="NO" id="FBp-dC-E43">
@@ -48,7 +48,7 @@
                                             <constraint firstAttribute="height" constant="130" id="dkA-bw-XW1"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDJ-iu-KW1">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDJ-iu-KW1">
                                         <rect key="frame" x="32" y="62" width="60.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <nil key="textColor"/>
@@ -68,13 +68,22 @@
                                     <constraint firstAttribute="height" constant="152" id="zkV-Sc-EeP"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_icon" translatesAutoresizingMaskIntoConstraints="NO" id="JEv-hV-qtr">
+                                <rect key="frame" x="127.5" y="273.5" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="5f6-q0-CBH"/>
+                                    <constraint firstAttribute="width" constant="120" id="6xU-UN-Aux"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RHq-7g-yDk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Ma-AY-KWf"/>
                             <constraint firstAttribute="bottom" secondItem="RHq-7g-yDk" secondAttribute="bottom" constant="-40" id="7bs-oz-I6R"/>
+                            <constraint firstItem="JEv-hV-qtr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="E1o-XF-SiE"/>
                             <constraint firstItem="pLx-MU-dDF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ivd-pT-wCF"/>
                             <constraint firstItem="pLx-MU-dDF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j6K-0f-9gH"/>
+                            <constraint firstItem="JEv-hV-qtr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kcp-st-4bt"/>
                             <constraint firstItem="RHq-7g-yDk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oEP-pW-Yv9"/>
                             <constraint firstItem="pLx-MU-dDF" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="yI0-qm-G40"/>
                         </constraints>
@@ -89,6 +98,7 @@
     <resources>
         <image name="bottom_circles" width="128" height="164"/>
         <image name="pill" width="37" height="37"/>
+        <image name="splash_icon" width="90" height="90"/>
         <image name="top_circles" width="239" height="130"/>
     </resources>
 </document>
